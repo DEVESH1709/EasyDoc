@@ -1,9 +1,4 @@
 
-
-
-
-
-
 import React from "react";
 import { IoIosNotifications } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +15,7 @@ const sampleReports = [
   { id: 5, title: "Q1 Report 2024", date: "18 Feb, 2024", progress: 100, status: "Submitted" },
   { id: 4, title: "Q2 Report 2024", date: "10 Aug, 2024", progress: 90 },
   { id: 5, title: "Q1 Report 2024", date: "18 Feb, 2024", progress: 100, status: "Submitted" },
+
 ];
 
 const Reports = () => {

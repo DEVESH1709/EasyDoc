@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Reports from "./pages/Reports";
-import QuestionPage from "./pages/QuestionPage";
+// import QuestionPage from "./pages/QuestionPage";
 
 function App() {
   return (
