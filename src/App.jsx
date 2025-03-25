@@ -7,7 +7,7 @@ import QuestionPage from "./pages/QuestionPage.jsx";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      {/* <Route path="/" element={<Login />} /> */}
       <Route path="/" element={<Reports />} />
       {/* <Route path="/questions/:reportId" element={<Questions />} />  */}
       {/* <Route path="/question/:id" element={<QuestionPage />} /> */}

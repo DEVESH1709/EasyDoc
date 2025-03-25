@@ -12,34 +12,7 @@ const Login = () => {
   const [error, setError] = useState(""); 
   const navigate = useNavigate(); 
 
-  
-//   const handleLogin = async (e) => {
-//     e.preventDefault(); 
-//     setError(""); 
-
-//     try {
-//       axios.get('http://localhost:8082/marketUpdates')
-//       .then((getResponse) => {
-//         console.log("GET Response")
-//         console.log(getResponse.data);
-//         data = getResponse.data;
-//         response.send(data);
-//       })
-
-//       const response = await axios.get("https://be07-2409-40d4-1072-25a9-7440-5be6-18b3-5ae6.ngrok-free.app/api/method/easydoc.easydoc.api.easydoc_login.login", {
-//         usr,
-//         pwd,
-//       });
-//  console.log(response.data);
-//       if (response.status === 200) {
-//         alert("Login successful!");
-//         sessionStorage.setItem("token", response.data.api_key); 
-//         navigate("/reports"); 
-//       }
-//     } catch (error) {
-//       setError("Invalid username or password"); 
-//     }
-//   };
+ 
 const handleLogin = (e) => {
   e.preventDefault();
   setError("");
@@ -80,9 +53,10 @@ const handleLogin = (e) => {
 
     <div className="login-container">
       <div className="logo1">EasyDoc</div>
-      <h2>Login</h2>
-
-      <div></div>{error && <p className="error-message">{error}</p>}
+      <div className="title-container">
+        <h2>Login</h2>
+        {error && <p className="error-message">{error}</p>}
+      </div>
 
       <form onSubmit={handleLogin}>
        

@@ -212,16 +212,36 @@
    }
    
    .progress-circle {
-     padding: 6px 14px;
-     border-radius: 50px;
-     font-size: 14px;
-     font-weight: bold;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
-   
-   /* Status Colors */
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    padding: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .progress-text {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 8px;
+    font-family: Roboto;
+  }
+  
+  .red-text {
+    color: red;
+  }
+  
+  .yellow-text {
+    color: #d39e00;
+  }
+  
+  .green-text {
+    color: green;
+  }
+
    .red {
      background-color: #ffcccc;
      color: red;
@@ -244,7 +264,7 @@
      margin-left: 8px;
    }
    
-   /* 📱 Responsive Design */
+  
    @media (max-width: 960px) {
      .reports-container {
        width: 100vw;
