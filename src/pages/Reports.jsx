@@ -66,7 +66,7 @@ const Reports = () => {
   <span className={`progress-text ${getProgressText(report.progress).color}`}>
     {getProgressText(report.progress).text}
   </span>
-  <MdOutlineArrowForwardIos fontSize={20} color="grey" />
+  <MdOutlineArrowForwardIos fontSize={20} color="#9CA3AF" />
 </div>
 
         </div>

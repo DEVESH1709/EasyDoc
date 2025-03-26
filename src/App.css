@@ -1,23 +1,27 @@
-body {
-  /* font-family: Arial, sans-serif; */
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: max-content; */
-  margin: 0;
-}
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
-/* Reset and Global Styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
+
 }
 
-/* Body - Full Screen Layout */
+body {
+  background-color: white;
+  color: lightgray;
+ overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p{
+  text-align:justfy;
+}
