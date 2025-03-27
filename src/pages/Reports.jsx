@@ -45,7 +45,7 @@ const Reports = () => {
         <div 
           key={report.id} 
           className="report-card"  
-          onClick={() => navigate(`/question/${report.id}`)} // 🔥 Redirect to question page
+          onClick={() => navigate(`/question/${report.id}`)} 
         >
           <div className="report-info">
             <span className="report-icon"><FaCalendar /></span>
@@ -95,28 +95,73 @@ export default Reports;
 //   const [error, setError] = useState(null);
 
 
-//   useEffect(() => {
-//     const fetchReports = async () => {
-//       try {
-//         const response = await axios.get(" https://3fa4-2409-40d4-1072-25a9-4b60-4b91-70c2-8e4e.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires?user=rs21252125@gmail.com");  
-//         setReports(response.data); 
-//       } catch (err) {
-//         setError("Failed to fetch reports.");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+// const getProgressColor = (progress) => {
+//   if (progress === 0) return "red";
+//   if (progress < 70) return "yellow";
+//   return "green";
+// };
+
+// const getProgressText = (progress) => {
+//   if (progress === 0) return { text: "Start", color: "red-text" };
+//   if (progress === 100) return { text: "View", color: "green-text" };
+//   return { text: "Edit", color: "yellow-text" };
+// };
+
+
+//   // useEffect(() => {
+//   //   const fetchReports = async () => {
+//   //     try {
+//   //       const response = await axios.get(" https://3fa4-2409-40d4-1072-25a9-4b60-4b91-70c2-8e4e.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires?user=rs21252125@gmail.com");  
+//   //       setReports(response.data); 
+//   //     } catch (err) {
+//   //       setError("Failed to fetch reports.");
+//   //     } finally {
+//   //       setLoading(false);
+//   //     }
+//   //   };
     
+//   //   fetchReports();
+//   // }, []);
+
+//   useEffect(() => {
+//     const fetchReports = () => {
+//       // console.log("fetching reports");
+//       axios.get(
+//         "https://05cc-2409-40d4-20-5a9d-4643-69d2-b318-4672.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires",
+//         {    
+//           headers: {
+
+//              "Authorization":  sessionStorage.getItem("user_token"),
+//              "ngrok-skip-browser-warning": "true" ,
+//             //  "Access-Control-Allow-Origin" : "*",
+//           },
+//           params: {
+//           user: sessionStorage.getItem("user"), 
+//         },
+//         }
+//       )
+//       .then(response => {
+//         console.log(response.data.message.data);
+//         setReports(response.data.message.data);
+      
+//       })
+//       .catch(() => {
+//         setError("Failed to fetch reports.");
+//       })
+//       .finally(() => {
+//         setLoading(false);
+//       });
+//     };
+  
 //     fetchReports();
 //   }, []);
-
-
+  
 //   const getProgressColor = (progress) => {
 //     if (progress === 0) return "red";
 //     if (progress < 70) return "yellow";
 //     return "green";
 //   };
-
+                     
 //   return (
 //     <div className="reports-container">
 //       {/* ✅ Header Section */}
@@ -145,20 +190,31 @@ export default Reports;
 //                 <span className="report-icon"><FaCalendar /></span>
 //                 <div className="report-title-container">
 //                   <h3>
-//                     {report.title} 
+//                     {report.name} 
 //                     {report.status && <span className="submitted-text"> Submitted</span>}
 //                   </h3>
-//                   <p>{report.date}</p>
+//                   <p>{report.deadline_date}</p>
 //                 </div>
 //               </div>
               
              
-//               <div className="report-progress">
+//               {/* <div className="report-progress">
 //                 <span className={`progress-circle ${getProgressColor(report.progress)}`}>
 //                   {report.progress}%
 //                 </span>
 //                 <MdOutlineArrowForwardIos fontSize={20} color="grey" />
-//               </div>
+//               </div> */}
+
+//                {/* Progress Indicator */}
+//           <div className="report-progress">
+//   <span className={`progress-circle ${getProgressColor(report.progress)}`}>
+//     {report.progress}%
+//   </span>
+//   <span className={`progress-text ${getProgressText(report.progress).color}`}>
+//     {getProgressText(report.progress).text}
+//   </span>
+//   <MdOutlineArrowForwardIos fontSize={20} color="#9CA3AF" />
+// </div>
 //             </div>
 //           ))
 //         ) : <p>No reports available.</p>

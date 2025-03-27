@@ -21,7 +21,7 @@ const handleLogin = (e) => {
   
   axios
     .get(
-      "https://3fa4-2409-40d4-1072-25a9-4b60-4b91-70c2-8e4e.ngrok-free.app/api/method/easydoc.easydoc.api.easydoc_login.login",
+      "https://05cc-2409-40d4-20-5a9d-4643-69d2-b318-4672.ngrok-free.app/api/method/easydoc.easydoc.api.easydoc_login.login",
       { headers: {"ngrok-skip-browser-warning": "true" },
         params: {
           usr, 
@@ -37,6 +37,7 @@ const handleLogin = (e) => {
       if (response.status === 200 && response.data.message.success_key==1) {
         alert("Login successful!");
         sessionStorage.setItem("user_token", "token "+response.data.message.api_key +":" + response.data.message.api_secret);
+        sessionStorage.setItem("user", response.data.message.email);
         navigate("/reports");
       }
       else{

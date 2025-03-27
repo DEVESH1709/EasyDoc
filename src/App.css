@@ -8,13 +8,16 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
-
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: white;
-  color: lightgray;
- overflow-x: hidden;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -22,6 +25,8 @@ a {
   color: inherit;
 }
 
-p{
-  text-align:justfy;
+p {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 16px;
 }

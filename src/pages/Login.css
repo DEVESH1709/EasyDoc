@@ -182,7 +182,10 @@ form {
     font-size: 16px;
   }
 } */
+@import '../App.css';
+
 .login-container {
+  /* border: 1px solid black; */
   width: 100%;
   min-height: 100vh;
   background: #FFFFFF;
@@ -192,7 +195,6 @@ form {
   justify-content: center;
   border-radius: 10px;
   color: black;
-  padding: 20px;
 }
 
 .logo1 {
@@ -200,24 +202,35 @@ form {
   font-size: 64px;
   font-weight: normal;
   color: #7427C2;
-  margin-bottom: 50px;
+  margin-bottom: 70px; 
 }
 
+/* Title + Error Container */
 .title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-bottom: 20px;
   width: 100%;
+  min-height: 70px; 
+  margin-bottom: 20px;
 }
 
 h2 {
   font-family: Inter, sans-serif;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   color: #883CA5;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+/* Error message styling */
+.error-message {
+  font-size: 14px;
+  color: red;
+  position: absolute;
+  top: 50px;
+  text-align: center;
 }
 
 form {
@@ -226,19 +239,19 @@ form {
   align-items: center;
   flex-direction: column;
   width: 644px;
-  max-width: 720px;
-  height: 302px;
-  gap: 15px;
+  max-width: 800px; 
+  gap: 20px;
 }
 
 .input-wrapper {
   position: relative;
-  width:  580px;
+  width: 100%;
+  max-width: 780px;
 }
 
 .input-wrapper input {
-  width:100%;
-  height: 50px;
+  width: 644px;
+  height: 48px;
   padding: 12px 16px 12px 40px;
   font-size: 16px;
   border-radius: 8px;
@@ -258,20 +271,19 @@ form {
 
 .login-btn {
   width: 100%;
-  max-width: 340px;
-  height: 50px;
+  max-width: 323px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #9973A8;
   color: white;
   font-size: 18px;
-  font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .login-btn:hover {
@@ -287,6 +299,29 @@ form {
 
 .forgot-password:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .login-container {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .logo1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .input-wrapper {
+    max-width: 100%;
+  }
+
+  .login-btn {
+    width: 80%;
+  }
 }
 
 @media (max-width: 960px) {
