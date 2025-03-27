@@ -207,12 +207,27 @@
      gap: 10px;
    }
    
-   .submitted {
+   /* .submitted {
      color: green;
      font-weight: bold;
      font-size: 14px;
-   }
-   
+   } */
+   .submitted {
+    color:green;
+    font-weight: 600;
+  }
+  
+   /* .submitted-text {
+    font-size: 14px;
+    font-weight: 500;
+    color:  green;
+  }
+  
+  .submitted-text:contains("Submitted") {
+    color: #6750A4;
+    font-weight: 600;
+  }
+   */
    .progress-circle {
     width: 40px; 
     height: 40px; 

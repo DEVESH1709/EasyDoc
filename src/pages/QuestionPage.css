@@ -6,15 +6,32 @@
 }
 
 .sidebar {
-  width: 250px;
+  width: 260px;
   height: 100vh;
-  background: #f4f4f4;
+  background: #FFFFFF;
   position: fixed;
-  left: -250px;
+  left: -260px;
   top: 0;
   transition: 0.3s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.sidebar-header p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
 .sidebar.open {
   left: 0;
 }
@@ -44,35 +61,94 @@
   cursor: pointer;
   user-select: none;
 }
+/* 
+.Back_report{
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 20px;
+  background-color: #ECE6F0;
+  color: #6750A4;
+  width: 80%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+} */
+
+.Back_report {
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 20px;
+  background-color: #ECE6F0;
+  color: #6750A4;
+  width: 80%;
+  height: 50px; /* Ensures proper vertical centering */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  text-align: center;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+/* .Back_report:hover {
+  background-color: #DCC7EB;
+} */
+
 
 .reports-list {
+  width: 100%;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .report-item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  background: #F6EEF9;
+  padding: 12px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+  gap: 12px;
 }
 
 .report-item.active {
   background: lightblue;
 }
 
-.logout {
-  background:#ECE6F0;
-  color: #6750A4;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 20px;
+
+.report-item p {
+  font-size: 14px;
   font-weight: 500;
-  border: none;
-  cursor: pointer;
 }
 
+.report-item span {
+  font-size: 12px;
+  color: gray;
+}
+button.logout {
+  background: #ECE6F0;
+  color: #6750A4;
+  width: 90%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: auto;
+  transition: 0.3s;
+}
 .question-box {
   padding: 20px;
   margin-top: 20px;

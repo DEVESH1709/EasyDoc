@@ -173,6 +173,10 @@ const QuestionPage = () => {
           <FaUserCircle size={50} />
           <p>Username</p>
         </div>
+        <div className="Back_report" onClick={() => navigate("/reports")}> 
+  <p>Back to Reports</p>
+</div>
+
 
         <div className="reports-list">
           {sampleReports.map((rep) => (
