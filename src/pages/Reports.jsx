@@ -101,7 +101,7 @@ const Reports = () => {
     const fetchReports = () => {
       // console.log("fetching reports");
       axios.get(
-        "https://c984-2409-40d4-20-5a9d-a5b2-7f36-3c3e-53b5.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires",
+        "https://8efd-2409-40d4-310f-e5df-2495-e480-433e-7bb8.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires",
         {    
           headers: {
 
@@ -162,8 +162,10 @@ const Reports = () => {
               key={index}  
     className="report-card"  
     onClick={() => {
-      sessionStorage.setItem("selectedReport", JSON.stringify(report)); 
-      navigate(`/question/${index}`); // Use index as ID
+      // sessionStorage.setItem("selectedReport", JSON.stringify(report)); 
+    
+  navigate(`/question/${encodeURIComponent(report.name)}`);
+
     }} 
             >
               <div className="report-info">
@@ -205,3 +207,4 @@ const Reports = () => {
 };
 
 export default Reports;
+

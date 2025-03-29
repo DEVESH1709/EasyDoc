@@ -110,27 +110,46 @@
 .report-item {
   display: flex;
   align-items: center;
-  background: #F6EEF9;
+  background:white;
   padding: 12px;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   gap: 12px;
+ 
 }
 
-.report-item.active {
-  background: lightblue;
+ .report-item.active {
+ 
+  background: linear-gradient(0deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.1));
 }
 
 
 .report-item p {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
+  color: #141924;
+
+}
+
+
+.report-icon {
+  width: 35px;
+  height: 35px;
+  background: #f3e8ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 10px;
+  color: #8b5cb5;
 }
 
 .report-item span {
   font-size: 12px;
-  color: gray;
+  color: #141924;;
+  font-weight: 500;
 }
 button.logout {
   background: #ECE6F0;
@@ -174,7 +193,7 @@ button.logout {
 
 button {
   padding: 10px 20px;
-  background: purple;
+  background:#A855F7;
   color: white;
   border: none;
   cursor: pointer;
@@ -184,11 +203,13 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 50px;
+  border: 1px solid black;
 }
 
 .step {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -204,7 +225,7 @@ button {
 }
 
 .progress-line {
-  width: 50px;
+  width: 150px;
   height: 4px;
   background: #e5e5e5;
 }
