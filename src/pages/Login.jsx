@@ -21,14 +21,12 @@ const handleLogin = (e) => {
   
   axios
     .get(
-      "https://8efd-2409-40d4-310f-e5df-2495-e480-433e-7bb8.ngrok-free.app/api/method/easydoc.easydoc.api.easydoc_login.login",
-      { headers: {"ngrok-skip-browser-warning": "true" },
-        params: {
-          usr, 
-          pwd
-        },
+      "https://doradoritesting.frappe.cloud/api/method/easydoc.easydoc.api.easydoc_login.login",
+      { 
+        
+        params: { usr, pwd },  // Correct placement of parameters
+        withCredentials: true   // Moved outside of params
       }
-  
     )
    
     .then((response) => {
@@ -36,8 +34,10 @@ const handleLogin = (e) => {
 
       if (response.status === 200 && response.data.message.success_key==1) {
         alert("Login successful!");
-        sessionStorage.setItem("user_token", "token "+response.data.message.api_key +":" + response.data.message.api_secret);
+       
         sessionStorage.setItem("user", response.data.message.email);
+        sessionStorage.setItem("full_name", response.data.message.full_name);
+        sessionStorage.setItem("userImage", response.data.message.user_image);
         navigate("/reports");
       }
       else{

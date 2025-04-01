@@ -93,25 +93,22 @@ const Reports = () => {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+   
 
 
 
   useEffect(() => {
     const fetchReports = () => {
-      // console.log("fetching reports");
+      console.log("fetching reports");
       axios.get(
-        "https://8efd-2409-40d4-310f-e5df-2495-e480-433e-7bb8.ngrok-free.app/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires",
+        "https://doradoritesting.frappe.cloud/api/method/easydoc.easydoc.doctype.questionnaire.questionnaire.get_assigned_questionnaires",
         {    
-          headers: {
-
-             "Authorization":  sessionStorage.getItem("user_token"),
-             "ngrok-skip-browser-warning": "true" ,
-            //  "Access-Control-Allow-Origin" : "*",
-          },
+        
           params: {
           user: sessionStorage.getItem("user"), 
         },
+        
+        withCredentials: true   
         }
       )
       .then(response => {
@@ -129,13 +126,54 @@ const Reports = () => {
   
     fetchReports();
   }, []);
+
+
+  const handleReportClick = async (report) => {
+
+        
+      axios.post(
+          "https://doradoritesting.frappe.cloud/api/method/easydoc.easydoc.doctype.questionnaire_response.questionnaire_response.start_question",
+          { questionnaire:report.name,
+           client:sessionStorage.getItem("user"),
+           },
+          {
+            headers: {
+              
+              "Content-Type": "application/json",
+            },
+              withCredentials: true   // Moved outside of params
+            
+          }
+        )
+        .then(response => {
+          console.log(response.data.message.data);
+          sessionStorage.setItem("questionnaire_response_name" , response.data.message.questionnaire_response_name)
+          navigate(`/question/${encodeURIComponent(report.name)}`);
+        })
+        .catch((e) => {
+          console.log("error",e)
+        })
+       
+      };
+    
+   
+
+
   
+  const getProgressText = (progress) => {
+    // console.log(progress, typeof progress)
+  if (progress === 0) return { text: "Start", color: "red-text" };
+  if (progress === 100) return { text: "View", color: "green-text" };
+  return { text: "Edit", color: "yellow-text" };
+};
+
+
+            
   const getProgressColor = (progress) => {
     if (progress === 0) return "red";
     if (progress < 70) return "yellow";
     return "green";
-  };
-                     
+  };         
   return (
     <div className="reports-container">
       {/* ✅ Header Section */}
@@ -161,12 +199,13 @@ const Reports = () => {
               // onClick={() => navigate(`/question/${report.id}`)} 
               key={index}  
     className="report-card"  
-    onClick={() => {
-      // sessionStorage.setItem("selectedReport", JSON.stringify(report)); 
+    onClick={() => handleReportClick(report)} 
+  //   onClick={() => {
+  //     // sessionStorage.setItem("selectedReport", JSON.stringify(report)); 
     
-  navigate(`/question/${encodeURIComponent(report.name)}`);
+  // navigate(`/question/${encodeURIComponent(report.name)}`);
 
-    }} 
+  //   }} 
             >
               <div className="report-info">
                 <span className="report-icon"><FaCalendar /></span>
@@ -189,12 +228,16 @@ const Reports = () => {
 
                {/* Progress Indicator */}
           <div className="report-progress">
-  <span className={`progress-circle ${getProgressColor(report.progress)}`}>
-    {report.progress}%
+  <span className={`progress-circle ${getProgressColor(report.progress_percentage)}`}>
+
+    {report.progress_percentage}%
   </span>
-  {/* <span className={`progress-text ${getProgressText(report.progress).color}`}>
-    {getProgressText(report.progress).text}
-  </span> */}
+
+  
+  <span className={`progress-text ${getProgressText(report.progress_percentage.color)}`}>
+    {getProgressText(report.progress_percentage).text}
+  </span>
+ 
   <MdOutlineArrowForwardIos fontSize={20} color="#9CA3AF" />
 
 </div>
