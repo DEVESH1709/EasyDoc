@@ -127,15 +127,13 @@ const Reports = () => {
     fetchReports();
   }, []);
 
-
-  const handleReportClick = async (report) => {
-
-        
+  const handleReportClick = async (report) => {  
       axios.post(
           "https://doradoritesting.frappe.cloud/api/method/easydoc.easydoc.doctype.questionnaire_response.questionnaire_response.start_question",
           { questionnaire:report.name,
            client:sessionStorage.getItem("user"),
            },
+           
           {
             headers: {
               
@@ -149,7 +147,9 @@ const Reports = () => {
           console.log(response.data.message.data);
           sessionStorage.setItem("questionnaire_response_name" , response.data.message.questionnaire_response_name)
           navigate(`/question/${encodeURIComponent(report.name)}`);
+          
         })
+
         .catch((e) => {
           console.log("error",e)
         })
@@ -158,6 +158,44 @@ const Reports = () => {
     
    
 
+//   const handleReportClick = async (report) => {  
+//     axios.post(
+//         "https://doradoritesting.frappe.cloud/api/method/easydoc.easydoc.doctype.questionnaire_response.questionnaire_response.start_question",
+//         { 
+//             questionnaire: report.name,
+//             client: sessionStorage.getItem("user"),
+//         },
+//         {
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             withCredentials: true
+//         }
+//     )
+//     .then(response => {
+//         console.log("API Response:", response.data.message);
+        
+//         const questionnaireResponseName = response.data.message.questionnaire_response;
+//         const firstQuestion = response.data.message.question; // First question
+//         const savedAnswer = response.data.message.answer; // Pre-filled answer
+
+//         if (questionnaireResponseName) {
+//             sessionStorage.setItem("questionnaire_response_name", questionnaireResponseName);
+//             sessionStorage.setItem("current_question", firstQuestion);
+            
+//             if (savedAnswer) {
+//                 sessionStorage.setItem("saved_answer", JSON.stringify(savedAnswer)); // Store answer
+//             }
+
+//             navigate(`/question/${encodeURIComponent(report.name)}`);
+//         } else {
+//             console.error("questionnaire_response_name not found in API response");
+//         }
+//     })
+//     .catch(e => {
+//         console.log("error", e);
+//     });
+// };
 
   
   const getProgressText = (progress) => {
