@@ -52,19 +52,6 @@
   cursor: pointer;
   user-select: none;
 }
-/* 
-.Back_report{
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-  margin-top: 20px;
-  background-color: #ECE6F0;
-  color: #6750A4;
-  width: 80%;
-  text-align: center;
-  padding: 12px;
-  border-radius: 12px;
-} */
 
 .Back_report {
   font-size: 18px;
@@ -74,20 +61,16 @@
   background-color: #ECE6F0;
   color: #6750A4;
   width: 80%;
-  height: 50px; /* Ensures proper vertical centering */
+  height: 50px; 
   display: flex;
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
+  align-items: center; 
+  justify-content: center;
   text-align: center;
   padding: 0 12px;
   border-radius: 12px;
   font-weight: 600;
   transition: background 0.3s;
 }
-
-/* .Back_report:hover {
-  background-color: #DCC7EB;
-} */
 
 
 .reports-list {
@@ -159,12 +142,12 @@ button.logout {
   margin-top: auto;
   transition: 0.3s;
 }
-/* Question Box */
+
 .question-box {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+ 
   margin-top: 20px;
 
   width: 100%px;
@@ -178,7 +161,7 @@ line-height: 20px;
 margin-top: 25px;
 margin-bottom: 50px;
 }
-/* Common Question Options Styling */
+
 .options{
   display: flex;
   flex-direction: column;
@@ -210,7 +193,7 @@ margin-bottom: 50px;
     flex-wrap: wrap;
   margin-top: 10px;
     align-items: center;
-    /* border: 1px solid black; */
+  
 }
 .text-input {
   display: flex;
@@ -231,7 +214,7 @@ margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
-  max-width: 350px; /* Ensures all options have equal width */
+  max-width: 350px; 
   min-height: 50px;
   justify-content: center;
 }
@@ -240,7 +223,7 @@ margin-top: 10px;
   background: #6a33e4;
 }
 
-/* File Upload */
+
 .file-upload-option {
   position: relative;
 }
@@ -267,13 +250,13 @@ margin-top: 10px;
   justify-content: center;
   width: 371px;
   height: 150px;
-/* border:1px solid black; */
+
 font-family: Open Sans;
 font-size: 14px;
 font-weight: 600;
 line-height: 20px;
 }
-/* Text Input */
+
 .text-input-option input {
  background-color: #FEEFFF;
   width: 271px;
@@ -295,7 +278,7 @@ line-height: 20px;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  /* border: 1px solid black; */
+ 
   height: 70px;
 
  
@@ -305,7 +288,7 @@ line-height: 20px;
   background: #A855F7;
   color: white;
   border: none;
-  /* padding: 12px 20px; */
+
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
